@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flutter Developer Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+--bg:#020617;
+--card:#0f172a;
+--primary:#38bdf8;
+--text:#e5e7eb;
+--muted:#94a3b8;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:linear-gradient(180deg,#020617,#0f172a);
+color:var(--text);
+}
+
+header{
+padding:3rem 1.5rem 2.2rem;
+text-align:center;
+animation:fadeDown 1s ease;
+}
+
+header h1{
+font-size:clamp(2.2rem,4vw,3.1rem);
+}
+
+header span{color:var(--primary)}
+
+header p{
+margin-top:1rem;
+color:var(--muted);
+max-width:700px;
+margin-inline:auto;
+}
+
+nav{
+margin-top:1.6rem;
+display:flex;
+justify-content:center;
+gap:1.6rem;
+}
+
+nav a{
+color:var(--text);
+text-decoration:none;
+font-weight:500;
+position:relative;
+}
+
+nav a::after{
+content:"";
+position:absolute;
+left:0;
+bottom:-6px;
+width:0;
+height:2px;
+background:var(--primary);
+transition:.3s;
+}
+
+nav a:hover::after{width:100%}
+
+section{
+padding:2.2rem 1.5rem;
+max-width:1100px;
+margin:auto;
+animation:fadeUp .9s ease;
+}
+
+.section-title{
+font-size:1.6rem;
+margin-bottom:1.3rem;
+border-left:4px solid var(--primary);
+padding-left:1rem;
+}
+
+/* ABOUT */
+.about{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:1.3rem;
+}
+
+.about div{
+background:var(--card);
+padding:1.4rem;
+border-radius:14px;
+transition:.3s;
+}
+
+.about div:hover{transform:translateY(-6px)}
+
+/* SKILLS (COMPACT) */
+.skills{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(90px,1fr));
+gap:.6rem;
+}
+
+.skill{
+background:var(--card);
+padding:.5rem;
+border-radius:10px;
+text-align:center;
+transition:.3s;
+min-height:78px;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+cursor:pointer;
+}
+
+/* 🔥 IMAGE SIZE THODA BADA */
+.skill img{
+width:42px;      /* was 36px */
+height:42px;
+object-fit:contain;
+margin-bottom:4px;
+}
+
+/* TEXT */
+.skill p{
+font-size:.8rem;
+line-height:1;
+}
+
+/* 🔥 PEHLE JESA HOVER EFFECT */
+.skill:hover{
+background:linear-gradient(135deg,#0284c7,#38bdf8);
+color:#020617;
+transform:translateY(-6px) scale(1.05);
+}
+
+.skill:hover img{
+filter:brightness(0.1);
+}
+
+
+/* PROJECTS */
+.projects{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:1.4rem;
+}
+
+.project{
+background:var(--card);
+padding:1.4rem;
+border-radius:16px;
+display:flex;
+flex-direction:column;
+gap:.7rem;
+transition:.3s;
+}
+
+.project:hover{transform:translateY(-8px)}
+
+.project img{
+width:100%;
+height:auto;
+border-radius:14px;
+margin-bottom:.6rem;
+transition:transform .4s ease;
+}
+
+.project:hover img{
+transform:scale(1.03);
+}
+
+.project h3{color:var(--primary)}
+
+.project p{
+color:var(--muted);
+font-size:.92rem;
+line-height:1.5;
+}
+
+/* CONTACT */
+.contact{
+background:var(--card);
+padding:2rem;
+border-radius:16px;
+text-align:center;
+}
+
+.contact p{
+color:var(--muted);
+margin-bottom:.6rem;
+}
+
+.contact a{
+color:var(--primary);
+text-decoration:none;
+font-weight:600;
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:1.8rem;
+color:var(--muted);
+font-size:.9rem;
+}
+
+@media(max-width:768px){
+.about{grid-template-columns:1fr}
+}
+
+@keyframes fadeUp{
+from{opacity:0;transform:translateY(30px)}
+to{opacity:1;transform:translateY(0)}
+}
+
+@keyframes fadeDown{
+from{opacity:0;transform:translateY(-30px)}
+to{opacity:1;transform:translateY(0)}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Hi, I'm <span>Gopal Sharma</span></h1>
+<p>Flutter Developer building modern, scalable and production-ready applications.</p>
+<nav>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<section id="about">
+<h2 class="section-title">About Me</h2>
+<div class="about">
+<div>
+Flutter developer experienced in building real-world applications with
+API integration, authentication and scalable architecture.
+</div>
+<div>
+Focused on clean code, performance and delivering reliable
+production-ready mobile solutions. Open to remote opportunities.
+</div>
+</div>
+</section>
+
+<section id="skills">
+<h2 class="section-title">Skills</h2>
+<div class="skills">
+<div class="skill"><img src="assets/skills/flut.png"><p>Flutter</p></div>
+<div class="skill"><img src="assets/skills/dart.png"><p>Dart</p></div>
+<div class="skill"><img src="assets/skills/api.png"><p>Api integration</p></div>
+<div class="skill"><img src="assets/skills/bloc.png"><p>Bloc / Provider</p></div>
+<div class="skill"><img src="assets/skills/firebase.png"><p>Firebase,Shared Preference</p></div>
+<div class="skill"><img src="assets/skills/github.png"><p>GitHub</p></div>
+</div>
+</section>
+
+<section id="projects">
+<h2 class="section-title">Projects</h2>
+<div class="projects">
+
+<div class="project">
+<img src="assets/images/rssdi.jpeg">
+<h3>RSSDI</h3>
+<p>
+Community-based application for doctors and diabetes patients.
+Provides event awareness, prevention guidance and educational
+content to promote a healthier lifestyle.
+</p>
+</div>
+
+<div class="project">
+<img src="assets/images/rajmusicals.jpeg">
+<h3>Raj Musicals</h3>
+<p>
+Offline-to-online e-commerce platform for musical instruments.
+Users can explore and purchase all types of music instruments
+from physical stores through a digital catalog.
+</p>
+</div>
+
+
+<div class="project">
+<img src="assets/images/slaynow.jpeg">
+<h3>SlayNow</h3>
+<p>
+Gen-Z focused fashion e-commerce platform.
+Allows users to explore and purchase trending clothing
+collections with a modern and responsive UI.
+</p>
+</div>
+
+<div class="project">
+<img src="assets/images/bez.jpeg">
+<h3>Bez LMS</h3>
+<p>
+Learning Management System for tailoring and stitching courses.
+Users can purchase courses and learn practical stitching skills
+through structured learning modules.
+</p>
+</div>
+
+</div>
+</section>
+
+<section id="contact">
+<h2 class="section-title">Contact</h2>
+<div class="contact">
+<p>Email: <a href="mailto:sharmago1619@gmail.com">sharmago1619@gmail.com</a></p>
+<p>GitHub: <a href="https://github.com/gopalsharma2002">github.com/gopalsharma2002</a></p>
+<p>LinkedIn: <a href="https://www.linkedin.com/in/gopal-sharma3787/">linkedin.com/gopal-sharma3787</a></p>
+</div>
+</section>
+
+<footer>© 2025 Gopal Sharma • Flutter Developer</footer>
+
+</body>
+</html>
